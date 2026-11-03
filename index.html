@@ -92,7 +92,7 @@
       <p>It is a small model trained on a few thousand sentences, and it shows. It can call a record quarter bad news, tag a surname as a year, or miss a name it has never seen. Scores near 50 % on the stamp mean it is guessing.</p>
       <p>Building this page uncovered a bug in the original pipeline: it split text only on spaces, so words reached the model glued to punctuation ("year,", "NASDAQ.") and fell outside the vocabulary. On the ten archive items that left 20.5 % of tokens unknown. Splitting punctuation the way the training data does brings it down to 9.3 %, and the entities come out noticeably cleaner. The Python pipeline now uses the same tokenizer.</p>
       <p>The weights are exported to 16-bit floats (5.9 MB) and the forward pass is written in plain JavaScript. On the ten archive items it gives the same tones and entities as the PyTorch model.</p>
-      <p class="links"><a href="https://github.com/liiiaamm/ai-financial-news-alerts">Code and training scripts</a> <a href="docs/Final_Paper.pdf">Full report (PDF)</a></p>
+      <p class="links"><a href="https://github.com/finnews-ai/ai-financial-news-alerts">Code and training scripts</a> <a href="docs/Final_Paper.pdf">Full report (PDF)</a></p>
     </div>
   </section>
 </main>
